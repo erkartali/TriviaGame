@@ -12,13 +12,14 @@
     <title>Trivia Game</title>
   </head>
   <body>
-        <div class="container">
+        <div class="container text-center">
             <h1>Trivia Game</h1>
+            <button id="countdown">Start Game</button>
 
             <div class="conatiner">
-                <h2>Time Remaining : <span class="timer">0</span> Seconds</h2>
+                <h2>Time Remaining : <span id="timer">60</span> Seconds</h2>
 
-                <div class="container">
+                <div class="container game-questions">
                     <form name="trivia">
                         <h3 class="questions">What was the first full length CGI movie?</h3>
                         <div class="d-md-flex justify-content-around">
@@ -120,17 +121,23 @@
                             </div>
                         </div>
                     </form>
+
+                    <button class="radio-submit">Submit</button>
                 </div>
 
-                <button class="radio-submit">Submit</button>
 
                 <div id="result">
                     <h2 id="correct-answers"></h2>
                     <h2 id="incorrect-answers"></h2>
+                    <h2 id="unanswered"></h2>
                 </div>
                 
             </div>
         </div>
+
+        <div class="test"><span class="time2">60</span></div>
+        <button class="begin">start</button>
+        <button class="end">stop</button>
     
 
     <!-- Optional JavaScript -->
