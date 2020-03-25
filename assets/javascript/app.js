@@ -5,6 +5,7 @@ var correct = 0;
 var incorrect = 0;
 var time = 60;
 var clicked = false;
+var timeId;
 
 
 
@@ -40,12 +41,12 @@ var  collectAnswers = () => {
     
 
     if (!clicked) {
-        $('#correct-answers').html('You got ' + correct + ' right!');
-        $('#incorrect-answers').html('You got ' + incorrect + ' wrong!');
+        $('#correct-answers').html('You got ' + correct + ' right');
+        $('#incorrect-answers').html('and ' + incorrect + ' wrong!');
         clicked = true;
     } 
     
-    window.clearInterval(startTheTimer);
+    clearInterval(timeId);
 }
 
 var timer = () => {
@@ -54,19 +55,11 @@ var timer = () => {
 }
 
 var startTheTimer = () => {
-    setInterval(timer, 1000);
+    timeId = setInterval(timer, 1000);
     $('.game-questions').css('display', 'initial');
 }
 
 $('#countdown').click(startTheTimer);
 $('.radio-submit').click(collectAnswers);
 var time2 = 60;
-
-var timer2 = () => {
-    time2--;
-    $('.time2').html(time2);
-}
-
-$('.begin').click(setInterval(timer2, 1000));
-$('.end').click(clearInterval(timer2));
 
