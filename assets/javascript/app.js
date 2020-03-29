@@ -6,12 +6,29 @@ var checked = [];
 var correct = 0;
 var incorrect = 0;
 var unanswered = 0;
-var time = 60;
+var time = 120;
 var clicked = false;
 var timeId;
 
-// console.log(inputs);
+// control which css blocks are showing
+function showResultsdisplay() {
+    $('.result-wrapper').css('display', 'initial')
+}
 
+function hideQuestionDisplay() {
+    $('.darken-overlay').css('display', 'none');
+}
+
+function showQuestionDisplay() { 
+    $('.darken-overlay').css('display', 'initial');
+}
+
+function hideStartBlock() {
+    $('.start-block').css('display', 'none');
+}
+
+
+// collect all answers and show results
 var  collectAnswers = () => {
     
     // get all radio buttons
@@ -20,7 +37,6 @@ var  collectAnswers = () => {
             radios.push(inputs[i]);
         }
     }
-    console.log(radios)
     
     // loop through all radio buttons and create an array for only checked buttons
     for (let j = 0; j < radios.length; j++) {
@@ -28,7 +44,6 @@ var  collectAnswers = () => {
             checked.push(radios[j]);
         }
     }
-    console.log(checked);
     
     // loop through all checked button and increment correct and incorrect
     for (let k = 0; k < checked.length; k++) {
@@ -40,15 +55,6 @@ var  collectAnswers = () => {
     }
 
     checkUnanswered()
-
-    // console.log(trivia.movie[0].checked);
-    // console.log(trivia.movie[1].checked);
-    // console.log(trivia.movie[2].checked);
-    // console.log(trivia.movie[3].checked);
-
-    console.log('correct:', correct);
-    console.log('incorrect:', incorrect);
-    console.log('unanswered:', unanswered);
     
     // output the results of the quiz to the html and prevent further clicking
     if (!clicked) {
@@ -57,28 +63,52 @@ var  collectAnswers = () => {
         $('#unanswered').html( unanswered + ' unanswered');
         clicked = true;
     } 
-    
+    showResultsdisplay()
+    hideQuestionDisplay()
     clearInterval(timeId);
 }
 
+// get unanswered questions
 function checkUnanswered() {
-    if (trivia.movie[0].checked === false && trivia.movie[1].checked === false && trivia.movie[2].checked === false && trivia.movie[3].checked === false) {
+    if (trivia.drink1[0].checked === false && trivia.drink1[1].checked === false && trivia.drink1[2].checked === false && trivia.drink1[3].checked === false) {
         unanswered++;
     }
-    if (trivia.spice[0].checked === false && trivia.spice[1].checked === false && trivia.spice[2].checked === false && trivia.spice[3].checked === false) {
+    if (trivia.drink2[0].checked === false && trivia.drink2[1].checked === false && trivia.drink2[2].checked === false && trivia.drink2[3].checked === false) {
         unanswered++;
     }
-    if (trivia.sport[0].checked === false && trivia.sport[1].checked === false && trivia.sport[2].checked === false && trivia.sport[3].checked === false) {
+    if (trivia.drink3[0].checked === false && trivia.drink3[1].checked === false && trivia.drink3[2].checked === false && trivia.drink3[3].checked === false) {
         unanswered++;
     }
-    if (trivia.color[0].checked === false && trivia.color[1].checked === false && trivia.color[2].checked === false && trivia.color[3].checked === false) {
+    if (trivia.drink4[0].checked === false && trivia.drink4[1].checked === false && trivia.drink4[2].checked === false && trivia.drink4[3].checked === false) {
         unanswered++;
     }
-    if (trivia.smirf[0].checked === false && trivia.smirf[1].checked === false && trivia.smirf[2].checked === false && trivia.smirf[3].checked === false) {
+    if (trivia.drink5[0].checked === false && trivia.drink5[1].checked === false && trivia.drink5[2].checked === false && trivia.drink5[3].checked === false) {
+        unanswered++;
+    }
+    if (trivia.drink6[0].checked === false && trivia.drink6[1].checked === false && trivia.drink6[2].checked === false && trivia.drink6[3].checked === false) {
+        unanswered++;
+    }
+    if (trivia.drink7[0].checked === false && trivia.drink7[1].checked === false && trivia.drink7[2].checked === false && trivia.drink7[3].checked === false) {
+        unanswered++;
+    }
+    if (trivia.drink8[0].checked === false && trivia.drink8[1].checked === false && trivia.drink8[2].checked === false && trivia.drink8[3].checked === false) {
+        unanswered++;
+    }
+    if (trivia.drink9[0].checked === false && trivia.drink9[1].checked === false && trivia.drink9[2].checked === false && trivia.drink9[3].checked === false) {
+        unanswered++;
+    }
+    if (trivia.drink10[0].checked === false && trivia.drink10[1].checked === false && trivia.drink10[2].checked === false && trivia.drink10[3].checked === false) {
+        unanswered++;
+    }
+    if (trivia.drink11[1].checked === false && trivia.drink11[1].checked === false && trivia.drink11[2].checked === false && trivia.drink11[3].checked === false) {
+        unanswered++;
+    }
+    if (trivia.drink12[0].checked === false && trivia.drink12[1].checked === false && trivia.drink12[2].checked === false && trivia.drink12[3].checked === false) {
         unanswered++;
     }
 }
 
+// create timer 
 var timer = () => {
     time--;
     $('#timer').html(time);
@@ -87,9 +117,11 @@ var timer = () => {
     }
 }
 
+// start the timer 
 var startTheTimer = () => {
     timeId = setInterval(timer, 1000);
-    $('.game-questions').css('display', 'initial');
+    showQuestionDisplay();
+    hideStartBlock();
 }
 
 $('#countdown').click(startTheTimer);

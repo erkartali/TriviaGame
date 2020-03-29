@@ -7,131 +7,275 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
 
     <title>Trivia Game</title>
   </head>
   <body>
-        <div class="container text-center">
-            <h1>Trivia Game</h1>
-            <button id="countdown">Start Game</button>
-
-            <div class="conatiner">
-                <h2>Time Remaining : <span id="timer">60</span> Seconds</h2>
-
+        <div class="container text-center d-flex quiz-container">
+            <div class="start-block">
+                <div class="container text-block d-flex justify-content-center align-content-center">
+                    <div class="middle">
+                        <h1 class="text-center">Mixology Trivia Game</h1>
+                        <button id="countdown">Start Game</button>
+                    </div>
+                </div>
+            </div>
+                
+            <div class="darken-overlay">
                 <div class="container game-questions">
+                    <div id="timer-div">
+                        <h2>Time Left : <span id="timer">60</span> Seconds</h2>
+                    </div>
                     <form name="trivia">
-                        <h3 class="questions">What was the first full length CGI movie?</h3>
-                        <div class="d-md-flex justify-content-around movie-questions">
+                        <h3 class="questions">This drink containing vodka, ginger beer and lime juice is served in a copper mug.</h3>
+                        <div class="d-md-flex radio-questions ">
                             <div class="container">
-                                <input type="radio" id="answer1" name="movie" value="incorrect">
-                                <label for="answer1">answer1</label><br>
+                                <input type="radio" id="answer1" name="drink1" value="incorrect">
+                                <label for="answer1">Hanky Panky</label><br>
                             </div>
                             <div class="container">
-                                <input type="radio" id="answer2" name="movie" value="incorrect">
-                                <label for="answer2">answer2</label><br>
+                                <input type="radio" id="answer2" name="drink1" value="incorrect">
+                                <label for="answer2">Bramble</label><br>
                             </div>
                             <div class="container">
-                                <input type="radio" class="" id="answer3" name="movie" value="incorrect">
-                                <label for="answer3">answer3</label><br>
+                                <input type="radio" class="" id="answer3" name="drink1" value="incorrect">
+                                <label for="answer3">Jungle Bird</label><br>
                             </div>
                             <div class="container">
-                                <input type="radio" class="" id="answer4" name="movie" value="correct">
-                                <label for="answer4">answer4</label><br>
+                                <input type="radio" class="" id="answer4" name="drink1" value="correct">
+                                <label for="answer4">Moscow Mule</label><br>
                             </div>
                         </div>
                         
-                        <h3 class="questions">Which one of these is NOT a spice girl.</h3>
-                        <div class="d-md-flex justify-content-around">
+                        <h3 class="questions">This drink was made famous by Carrie Bradshaw in “Sex and the city” and contains citrus vodka, cointreau, lime juice and cranberry juice.</h3>
+                        <div class="d-md-flex justify-content-around radio-questions">
                             <div class="container">
-                                <input type="radio" id="answer1" name="spice" value="correct">
-                                <label for="answer1">answer1</label><br>
+                                <input type="radio" id="answer1" name="drink2" value="correct">
+                                <label for="answer1">Cosmopolitan</label><br>
                             </div>
                             <div class="container">
-                                <input type="radio" id="answer2" name="spice" value="incorrect">
-                                <label for="answer2">answer2</label><br>
+                                <input type="radio" id="answer2" name="drink2" value="incorrect">
+                                <label for="answer2">Paloma</label><br>
                             </div>
                             <div class="container">
-                                <input type="radio" class="" id="answer3" name="spice" value="incorrect">
-                                <label for="answer3">answer3</label><br>
+                                <input type="radio" class="" id="answer3" name="drink2" value="incorrect">
+                                <label for="answer3">White Lady</label><br>
                             </div>
                             <div class="container">
-                                <input type="radio" class="" id="answer4" name="spice" value="incorrect">
-                                <label for="answer4">answer4</label><br>
-                            </div>
-                        </div>
-
-                        <h3 class="questions">What is my favorite sport?</h3>
-                        <div class="d-md-flex justify-content-around">
-                            <div class="container">
-                                <input type="radio" id="answer1" name="sport" value="incorrect">
-                                <label for="answer1">answer1</label><br>
-                            </div>
-                            <div class="container">
-                                <input type="radio" id="answer2" name="sport" value="incorrect">
-                                <label for="answer2">answer2</label><br>
-                            </div>
-                            <div class="container">
-                                <input type="radio" class="" id="answer3" name="sport" value="correct">
-                                <label for="answer3">answer3</label><br>
-                            </div>
-                            <div class="container">
-                                <input type="radio" class="" id="answer4" name="sport" value="incorrect">
-                                <label for="answer4">answer4</label><br>
+                                <input type="radio" class="" id="answer4" name="drink2" value="incorrect">
+                                <label for="answer4">Sidecar</label><br>
                             </div>
                         </div>
 
-                        <h3 class="questions">Whats my favorite color?</h3>
-                        <div class="d-md-flex justify-content-around">
+                        <h3 class="questions">This drink was created at Caffe Casoni in Florence, Italy and contains gin Campari and sweet vermouth.</h3>
+                        <div class="d-md-flex justify-content-around radio-questions">
                             <div class="container">
-                                <input type="radio" id="answer1" name="color" value="incorrect">
-                                <label for="answer1">answer1</label><br>
+                                <input type="radio" id="answer1" name="drink3" value="incorrect">
+                                <label for="answer1">Aviation</label><br>
                             </div>
                             <div class="container">
-                                <input type="radio" id="answer2" name="color" value="incorrect">
-                                <label for="answer2">answer2</label><br>
+                                <input type="radio" id="answer2" name="drink3" value="incorrect">
+                                <label for="answer2">Amaretto Sour</label><br>
                             </div>
                             <div class="container">
-                                <input type="radio" class="" id="answer3" name="color" value="correct">
-                                <label for="answer3">answer3</label><br>
+                                <input type="radio" class="" id="answer3" name="drink3" value="correct">
+                                <label for="answer3">Negroni</label><br>
                             </div>
                             <div class="container">
-                                <input type="radio" class="" id="answer4" name="color" value="incorrect">
-                                <label for="answer4">answer4</label><br>
+                                <input type="radio" class="" id="answer4" name="drink3" value="incorrect">
+                                <label for="answer4">Americano</label><br>
                             </div>
                         </div>
 
-                        <h3 class="questions">Whos the best smirf?</h3>
-                        <div class="d-md-flex justify-content-around">
+                        <h3 class="questions">This classic cocktail was invented in Kentucky in the 19th century is mixed by muddling sugar with bitters then adding whiskey.</h3>
+                        <div class="d-md-flex justify-content-around radio-questions">
                             <div class="container">
-                                <input type="radio" id="answer1" name="smirf" value="incorrect">
-                                <label for="answer1">answer1</label><br>
+                                <input type="radio" id="answer1" name="drink4" value="incorrect">
+                                <label for="answer1">Gimlet</label><br>
                             </div>
                             <div class="container">
-                                <input type="radio" id="answer2" name="smirf" value="incorrect">
-                                <label for="answer2">answer2</label><br>
+                                <input type="radio" id="answer2" name="drink4" value="correct">
+                                <label for="answer2">Old Fashioned</label><br>
                             </div>
                             <div class="container">
-                                <input type="radio" class="" id="answer3" name="smirf" value="correct">
-                                <label for="answer3">answer3</label><br>
+                                <input type="radio" class="" id="answer3" name="drink4" value="incorrect">
+                                <label for="answer3">Mai Tai</label><br>
                             </div>
                             <div class="container">
-                                <input type="radio" class="" id="answer4" name="smirf" value="incorrect">
-                                <label for="answer4">answer4</label><br>
+                                <input type="radio" class="" id="answer4" name="drink4" value="incorrect">
+                                <label for="answer4">Boulevardier</label><br>
+                            </div>
+                        </div>
+
+                        <h3 class="questions">This potent spirit is sometimes called “The green fairy” and is rumored to have psychoactive properties.</h3>
+                        <div class="d-md-flex justify-content-around radio-questions">
+                            <div class="container">
+                                <input type="radio" id="answer1" name="drink5" value="incorrect">
+                                <label for="answer1">Bacardi 151</label><br>
+                            </div>
+                            <div class="container">
+                                <input type="radio" id="answer2" name="drink5" value="incorrect">
+                                <label for="answer2">Wild Turkey</label><br>
+                            </div>
+                            <div class="container">
+                                <input type="radio" class="" id="answer3" name="drink5" value="correct">
+                                <label for="answer3">Absinthe</label><br>
+                            </div>
+                            <div class="container">
+                                <input type="radio" class="" id="answer4" name="drink5" value="incorrect">
+                                <label for="answer4">Captain Morgan</label><br>
+                            </div>
+                        </div>
+                        <h3 class="questions">This simple cocktail aslo known as a “Cuba Libre” originated in Cuba after the Spanish American War.</h3>
+                        <div class="d-md-flex justify-content-around radio-questions">
+                            <div class="container">
+                                <input type="radio" id="answer1" name="drink6" value="correct">
+                                <label for="answer1">Rum and Coke</label><br>
+                            </div>
+                            <div class="container">
+                                <input type="radio" id="answer2" name="drink6" value="incorrect">
+                                <label for="answer2">Clover Club</label><br>
+                            </div>
+                            <div class="container">
+                                <input type="radio" class="" id="answer3" name="drink6" value="incorrect">
+                                <label for="answer3">Rum Fizz</label><br>
+                            </div>
+                            <div class="container">
+                                <input type="radio" class="" id="answer4" name="drink6" value="incorrect">
+                                <label for="answer4">Mimosa</label><br>
+                            </div>
+                        </div>
+                        <h3 class="questions">Another refreshing drink originating in Cuba, is made using mint leaves, white rum, lime juice and simple syrup.</h3>
+                        <div class="d-md-flex justify-content-around radio-questions">
+                            <div class="container">
+                                <input type="radio" id="answer1" name="drink7" value="incorrect">
+                                <label for="answer1">Mint Julip</label><br>
+                            </div>
+                            <div class="container">
+                                <input type="radio" id="answer2" name="drink7" value="incorrect">
+                                <label for="answer2">Sazerac</label><br>
+                            </div>
+                            <div class="container">
+                                <input type="radio" class="" id="answer3" name="drink7" value="incorrect">
+                                <label for="answer3">Mai Tai</label><br>
+                            </div>
+                            <div class="container">
+                                <input type="radio" class="" id="answer4" name="drink7" value="correct">
+                                <label for="answer4">Mojito</label><br>
+                            </div>
+                        </div>
+                        <h3 class="questions">This classic morning drink is one of the simplest cocktails ever created containing only champagne and orange juice.</h3>
+                        <div class="d-md-flex justify-content-around radio-questions">
+                            <div class="container">
+                                <input type="radio" id="answer1" name="drink8" value="incorrect">
+                                <label for="answer1">Negroni</label><br>
+                            </div>
+                            <div class="container">
+                                <input type="radio" id="answer2" name="drink8" value="correct">
+                                <label for="answer2">Mimosa</label><br>
+                            </div>
+                            <div class="container">
+                                <input type="radio" class="" id="answer3" name="drink8" value="incorrect">
+                                <label for="answer3">Bloody Mary</label><br>
+                            </div>
+                            <div class="container">
+                                <input type="radio" class="" id="answer4" name="drink8" value="incorrect">
+                                <label for="answer4">Whiskey Sour</label><br>
+                            </div>
+                        </div>
+                        <h3 class="questions">This simple mix of brandy, lemon juice, and orange liqueur was invented in Paris and dates back to the the end of World War 1.</h3>
+                        <div class="d-md-flex justify-content-around radio-questions">
+                            <div class="container">
+                                <input type="radio" id="answer1" name="drink9" value="incorrect">
+                                <label for="answer1">Brandy Manhattan</label><br>
+                            </div>
+                            <div class="container">
+                                <input type="radio" id="answer2" name="drink9" value="incorrect">
+                                <label for="answer2">Brandy Alexander</label><br>
+                            </div>
+                            <div class="container">
+                                <input type="radio" class="" id="answer3" name="drink9" value="correct">
+                                <label for="answer3">Sidecar</label><br>
+                            </div>
+                            <div class="container">
+                                <input type="radio" class="" id="answer4" name="drink9" value="incorrect">
+                                <label for="answer4">Vesper</label><br>
+                            </div>
+                        </div>
+                        <h3 class="questions">This main ingredient of this classic drink is bourbon and it is the official drink of the Kentucky Derby.</h3>
+                        <div class="d-md-flex justify-content-around radio-questions">
+                            <div class="container">
+                                <input type="radio" id="answer1" name="drink10" value="correct">
+                                <label for="answer1">Mint Julep</label><br>
+                            </div>
+                            <div class="container">
+                                <input type="radio" id="answer2" name="drink10" value="incorrect">
+                                <label for="answer2">Mojito</label><br>
+                            </div>
+                            <div class="container">
+                                <input type="radio" class="" id="answer3" name="drink10" value="incorrect">
+                                <label for="answer3">Magarita</label><br>
+                            </div>
+                            <div class="container">
+                                <input type="radio" class="" id="answer4" name="drink10" value="incorrect">
+                                <label for="answer4">Martini</label><br>
+                            </div>
+                        </div>
+                        <h3 class="questions">This drink is preferred by James Bond shaken not stirred and can be made using vodka or gin.</h3>
+                        <div class="d-md-flex justify-content-around radio-questions">
+                            <div class="container">
+                                <input type="radio" id="answer1" name="drink11" value="incorrect">
+                                <label for="answer1">Old Fashioned</label><br>
+                            </div>
+                            <div class="container">
+                                <input type="radio" id="answer2" name="drink11" value="incorrect">
+                                <label for="answer2">Margarita</label><br>
+                            </div>
+                            <div class="container">
+                                <input type="radio" class="" id="answer3" name="drink11" value="incorrect">
+                                <label for="answer3">Moscow Mule</label><br>
+                            </div>
+                            <div class="container">
+                                <input type="radio" class="" id="answer4" name="drink11" value="correct">
+                                <label for="answer4">Martini</label><br>
+                            </div>
+                        </div>
+                        <h3 class="questions">A splash of coke gives this extremely potent cocktail its color while the rest cosists of 5 clear liquors and sour mix.</h3>
+                        <div class="d-md-flex justify-content-around radio-questions">
+                            <div class="container">
+                                <input type="radio" id="answer1" name="drink12" value="incorrect">
+                                <label for="answer1">Mai Tai</label><br>
+                            </div>
+                            <div class="container">
+                                <input type="radio" id="answer2" name="drink12" value="incorrect">
+                                <label for="answer2">Irish Coffee</label><br>
+                            </div>
+                            <div class="container">
+                                <input type="radio" class="" id="answer3" name="drink12" value="incorrect">
+                                <label for="answer3">Tom Collins</label><br>
+                            </div>
+                            <div class="container">
+                                <input type="radio" class="" id="answer4" name="drink12" value="correct">
+                                <label for="answer4">Long Island Iced Tea</label><br>
                             </div>
                         </div>
                     </form>
 
                     <button class="radio-submit">Submit</button>
                 </div>
+            </div>
 
 
-                <div id="result">
-                    <h2 id="correct-answers"></h2>
-                    <h2 id="incorrect-answers"></h2>
-                    <h2 id="unanswered"></h2>
+            <div class="result-wrapper">
+                <div id="result" class="justify-content-center text-center">
+                    <h1>Cheers! You had :</h1>
+                    <h2 id="correct-answers">0</h2>
+                    <h2 id="incorrect-answers">0</h2>
+                    <h2 id="unanswered">0</h2>
+                    <div class="congrats-image"></div>
                 </div>
-                
             </div>
         </div>
     

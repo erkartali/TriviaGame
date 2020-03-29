@@ -1,3 +1,126 @@
-.game-questions {
+body {
+    background-color: #660033;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.container {
+    padding: 0;
+}
+
+.quiz-container {
+    height: 100%;
+    width: 85vw;
+    background-color: white;
+    position: relative;
+}
+
+.start-block {
+    display: initial;
+    top: 50%;
+}
+
+.middle {
+    position: relative;
+    top: 30%;
+    width: 85vw;
+    height: 100vh;
+}
+
+.middle h1 {
+    position: relative;
+    top: 30%;
+    /* font-family: 'Poppins', sans-serif; */
+}
+
+.middle button {
+    position: relative;
+    top: 30%;
+    display: block;
+    margin: 25px auto
+}
+
+.darken-overlay {
     display: none;
+    background-image: url('../images/martini.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    margin: 0;
+}
+
+.darken-overlay .game-questions {
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 100%;
+    height: 100%;
+    position:relative;
+}
+
+#timer-div {
+    /* position: -webkit-sticky; */
+    position: sticky;
+    top: 0;
+    background-color: black;
+    border: 1px solid white;
+}
+
+#timer h2 {
+    margin-top: .5em;
+    margin-bottom: .5em;
+}
+
+.questions {
+    max-width: 90%;
+    margin: 3em auto 1em auto;
+}
+
+.radio-questions {
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+.darken-overlay h3 {
+    font-size: 25px;
+}
+
+#result {
+    position: relative;
+    top: 20%;
+    width: 100%;
+    color: white;
+    background-color: rgba(0, 0, 0, .6);
+}
+
+.result-wrapper {
+    display: none;
+    height: 100vh;
+    width: 85vw;
+    position: relative;
+    background-image: url('../images/cheers.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.result-wrapper h1, h2 {
+    position: relative;
+    top: 20%;
+}
+
+button {
+    height: 3em;
+    width: 20em;
+    border-radius: 25px;
+    margin: 25px;
+    color: #660033;
+    transition: all 0.5s ease;
+    border: 1px solid #660033;
+}
+
+button:hover {
+    background-color: #660033;
+    color: white;
+}
+
+.congrats-image {
 }
