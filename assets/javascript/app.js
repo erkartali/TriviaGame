@@ -77,43 +77,9 @@ var  collectAnswers = () => {
 
 // get unanswered questions
 function checkUnanswered() {
-    if (trivia.drink1[0].checked === false && trivia.drink1[1].checked === false && trivia.drink1[2].checked === false && trivia.drink1[3].checked === false) {
-        unanswered++;
+    unanswered = 12 - (correct + incorrect);
     }
-    if (trivia.drink2[0].checked === false && trivia.drink2[1].checked === false && trivia.drink2[2].checked === false && trivia.drink2[3].checked === false) {
-        unanswered++;
-    }
-    if (trivia.drink3[0].checked === false && trivia.drink3[1].checked === false && trivia.drink3[2].checked === false && trivia.drink3[3].checked === false) {
-        unanswered++;
-    }
-    if (trivia.drink4[0].checked === false && trivia.drink4[1].checked === false && trivia.drink4[2].checked === false && trivia.drink4[3].checked === false) {
-        unanswered++;
-    }
-    if (trivia.drink5[0].checked === false && trivia.drink5[1].checked === false && trivia.drink5[2].checked === false && trivia.drink5[3].checked === false) {
-        unanswered++;
-    }
-    if (trivia.drink6[0].checked === false && trivia.drink6[1].checked === false && trivia.drink6[2].checked === false && trivia.drink6[3].checked === false) {
-        unanswered++;
-    }
-    if (trivia.drink7[0].checked === false && trivia.drink7[1].checked === false && trivia.drink7[2].checked === false && trivia.drink7[3].checked === false) {
-        unanswered++;
-    }
-    if (trivia.drink8[0].checked === false && trivia.drink8[1].checked === false && trivia.drink8[2].checked === false && trivia.drink8[3].checked === false) {
-        unanswered++;
-    }
-    if (trivia.drink9[0].checked === false && trivia.drink9[1].checked === false && trivia.drink9[2].checked === false && trivia.drink9[3].checked === false) {
-        unanswered++;
-    }
-    if (trivia.drink10[0].checked === false && trivia.drink10[1].checked === false && trivia.drink10[2].checked === false && trivia.drink10[3].checked === false) {
-        unanswered++;
-    }
-    if (trivia.drink11[1].checked === false && trivia.drink11[1].checked === false && trivia.drink11[2].checked === false && trivia.drink11[3].checked === false) {
-        unanswered++;
-    }
-    if (trivia.drink12[0].checked === false && trivia.drink12[1].checked === false && trivia.drink12[2].checked === false && trivia.drink12[3].checked === false) {
-        unanswered++;
-    }
-}
+
 
 // create timer 
 var timer = () => {
