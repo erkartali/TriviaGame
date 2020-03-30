@@ -29,7 +29,6 @@ body {
 .middle h1 {
     position: relative;
     top: 30%;
-    /* font-family: 'Poppins', sans-serif; */
 }
 
 .middle button {
@@ -57,7 +56,6 @@ body {
 }
 
 #timer-div {
-    /* position: -webkit-sticky; */
     position: sticky;
     top: 0;
     background-color: black;

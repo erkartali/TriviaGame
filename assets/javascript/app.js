@@ -8,6 +8,7 @@ var incorrect = 0;
 var unanswered = 0;
 var time = 120;
 var clicked = false;
+var unansweredFlag = false;
 var timeId;
 
 // control which css blocks are showing
@@ -26,6 +27,12 @@ function showQuestionDisplay() {
 function hideStartBlock() {
     $('.start-block').css('display', 'none');
 }
+
+// prevent redirecting to top of screen on click
+$(".label-prevent").click(function(event){
+    event.preventDefault();
+});
+  
 
 
 // collect all answers and show results
@@ -127,3 +134,8 @@ var startTheTimer = () => {
 $('#countdown').click(startTheTimer);
 $('.radio-submit').click(collectAnswers);
 
+
+
+/*
+
+*/
